@@ -124,27 +124,11 @@
                     @error('password')
                         <div class="text-danger mt-1">{{ $message }}</div>
                     @enderror
-                </div>
-
-                <div class="mb-3 form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                        {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">
-                        Ingat saya
-                    </label>
-                </div>
+                </div
 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-login">Masuk</button>
                 </div>
-
-                @if (Route::has('password.request'))
-                    <div class="text-center mt-3">
-                        <a class="forgot-link text-primary" href="{{ route('password.request') }}">
-                            Lupa password?
-                        </a>
-                    </div>
-                @endif
             </form>
         </div>
     </div>
