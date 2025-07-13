@@ -10,6 +10,7 @@ class transaksi extends Model
     protected $table = 'transaksi';
     protected $fillable = [
         'tanggal',
+        'user_id',
         'total_harga',
         'jumlah_bayar',
         'kembalian'
@@ -21,7 +22,11 @@ class transaksi extends Model
     }
 
     public function produk()
-{
-    return $this->belongsTo(Produk::class);
-}
+    {
+        return $this->belongsTo(Produk::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal')->default(DB::raw('(CURRENT_DATE())'));
+            $table->unsignedBigInteger('user_id');
             $table->decimal('total_harga', 10, 2);
             $table->decimal('jumlah_bayar', 10, 2);
             $table->decimal('kembalian', 10, 2);

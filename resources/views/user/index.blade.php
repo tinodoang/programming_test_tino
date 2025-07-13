@@ -1,24 +1,5 @@
 @extends('layout.template')
-<style>
-    .btn:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
-    }
 
-    .btn-outline-primary:hover {
-        background-color: #0d6efd;
-        color: white;
-        border-color: #0d6efd;
-    }
-
-    .btn-outline-danger:hover {
-        background-color: #dc3545;
-        color: white;
-        border-color: #dc3545;
-    }
-</style>
-
-<!-- START DATA -->
 @section('konten')
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">

@@ -2,7 +2,6 @@
 
 @section('konten')
     <div class="row my-3 p-3 bg-body rounded shadow-sm">
-        <!-- Kolom Kiri - Daftar Produk -->
         <div class="col-8">
             <div class="card border-warning">
                 <div class="card-header bg-primary text-white">
@@ -17,23 +16,20 @@
                     </div>
                 </div>
 
-                <!-- Form Pencarian -->
                 <div class="card-body">
                     <div class="d-flex gap-2 mb-3">
                         <form class="d-flex flex-grow-1" action="{{ url('transaksi') }}" method="get" id="searchForm">
                             <input class="form-control me-1" type="search" name="katakunci"
                                 value="{{ Request::get('katakunci') }}" placeholder="Masukkan kode atau nama produk..."
                                 aria-label="Search">
-                            <button class="btn btn-primary" type="submit" id="searchButton">
+                            <button class="btn btn-success btn-sm ml-2" type="submit" id="searchButton">
                                 <i class="fas fa-search"></i> Cari
                             </button>
                         </form>
-                        <a href="{{ url('transaksi') }}" class="btn btn-secondary" onclick="batalTransaksi()">
+                        <a href="{{ url('transaksi') }}" class="btn btn-danger btn-sm ml-2" onclick="batalTransaksi()">
                             <i class="fas fa-sync"></i> Reset
                         </a>
                     </div>
-
-                    <!-- Tabel Produk (Hasil Pencarian) -->
                     @if (Request::has('katakunci'))
                         <div class="table-responsive mb-3">
                             <h5>Hasil Pencarian</h5>
@@ -75,7 +71,6 @@
                         </div>
                     @endif
 
-                    <!-- Tabel Keranjang Belanja -->
                     <div class="table-responsive">
                         <h5>Keranjang Belanja</h5>
                         <table class="table table-hover">
@@ -108,14 +103,13 @@
             </div>
         </div>
 
-        <!-- Kolom Kanan - Detail Pembayaran -->
         <div class="col-4">
             <div class="card border-primary mb-3">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Detail Pembayaran</h5>
                 </div>
+                <input type="hidden" name="user_id">
                 <div class="card-body">
-                    <!-- Total -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Total Belanja</label>
                         <div class="input-group">
@@ -124,7 +118,6 @@
                         </div>
                     </div>
 
-                    <!-- Pembayaran -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Jumlah Bayar</label>
                         <div class="input-group">
@@ -134,7 +127,6 @@
                         </div>
                     </div>
 
-                    <!-- Kembalian -->
                     <div class="mb-3">
                         <label class="form-label fw-bold">Kembalian</label>
                         <div class="input-group">
@@ -143,9 +135,8 @@
                         </div>
                     </div>
 
-                    <!-- Tombol Proses -->
                     <div class="d-grid gap-2">
-                        <button class="btn btn-success" id="btn-proses" onclick="prosesPembayaran()">
+                        <button class="btn btn-success mb-2" id="btn-proses" onclick="prosesPembayaran()">
                             <i class="fas fa-check-circle"></i> Proses Pembayaran
                         </button>
                         <button class="btn btn-danger" id="btn-batal" onclick="batalTransaksi()">
@@ -408,10 +399,12 @@
         }
 
         function cetakNota(data) {
-    let windowCetak = window.open('', '_blank');
-    let tanggal = new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' });
+            let windowCetak = window.open('', '_blank');
+            let tanggal = new Date().toLocaleString('id-ID', {
+                timeZone: 'Asia/Jakarta'
+            });
 
-    let notaHTML = `
+            let notaHTML = `
         <html>
         <head>
             <title>Nota Pembayaran</title>
@@ -480,14 +473,14 @@
                 </thead>
                 <tbody>
                     ${keranjang.map((item, index) => `
-                        <tr>
-                            <td>${index + 1}</td>
-                            <td>${item.nama}</td>
-                            <td class="right">Rp ${item.harga.toLocaleString('id-ID')}</td>
-                            <td class="right">${item.qty}</td>
-                            <td class="right">Rp ${item.subtotal.toLocaleString('id-ID')}</td>
-                        </tr>
-                    `).join('')}
+                            <tr>
+                                <td>${index + 1}</td>
+                                <td>${item.nama}</td>
+                                <td class="right">Rp ${item.harga.toLocaleString('id-ID')}</td>
+                                <td class="right">${item.qty}</td>
+                                <td class="right">Rp ${item.subtotal.toLocaleString('id-ID')}</td>
+                            </tr>
+                        `).join('')}
                 </tbody>
                 <tfoot>
                     <tr>
@@ -510,16 +503,14 @@
         </html>
     `;
 
-    windowCetak.document.write(notaHTML);
-    windowCetak.document.close();
+            windowCetak.document.write(notaHTML);
+            windowCetak.document.close();
 
-    windowCetak.focus();
-    windowCetak.print();
+            windowCetak.focus();
+            windowCetak.print();
 
-    batalTransaksi();
-    location.reload();
-}
-
-
+            batalTransaksi();
+            location.reload();
+        }
     </script>
 @endsection

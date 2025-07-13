@@ -51,10 +51,11 @@ class TransaksiController extends Controller
 
             // Simpan transaksi header
             $transaksi = Transaksi::create([
+                'user_id' => auth()->id(), // Tambahkan ini
                 'total_harga' => $request->total_harga,
                 'jumlah_bayar' => $request->jumlah_bayar,
                 'kembalian' => $request->jumlah_bayar - $request->total_harga,
-                'tanggal' => now()->format('Y-m-d'), // Tambahkan field tanggal
+                'tanggal' => now()->format('Y-m-d'),
             ]);
 
             // Proses setiap item
@@ -93,7 +94,8 @@ class TransaksiController extends Controller
         }
     }
 
-    public function semua_transaksi(){
+    public function semua_transaksi()
+    {
         $transaksi = Transaksi::with('detail.produk')->get();
         return view('transaksi.semua_transaksi', compact('transaksi'));
     }
