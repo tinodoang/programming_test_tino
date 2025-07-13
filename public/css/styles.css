@@ -1,0 +1,154 @@
+.warna1 {
+    background-color: #212529;
+}
+
+.warna2 {
+    background-color: white;
+}
+
+.warna3 {
+    background-color: rgb(26, 153, 226);
+}
+
+.warna4 {
+    background-color: rgb(54, 54, 153);
+}
+
+.warna5 {
+    background-color: rgb(189, 124, 124);
+}
+
+.banner {
+    height: 100vh;
+    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("https://blog.jejualan.com/wp-content/uploads/2020/04/2-11.jpg");
+}
+
+.highlighted-kategori {
+    height: 250px;
+}
+
+.kategori-barang {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("img/logosd.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.kategori-diamond {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("img/logosd.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.kategori-pulsa {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("img/logosd.png");
+    background-size: cover;
+    background-position: center;
+}
+.kategori-makanan {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("img/logosd.png");
+    background-size: cover;
+    background-position: center;
+}
+.kategori-voucher {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("img/logosd.png");
+    background-size: cover;
+    background-position: center;
+}
+.kategori-aksesoris {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("img/logosd.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.no-decoration {
+    text-decoration: none;
+    color: white;
+}
+
+.no-decoration:hover {
+    color: rgb(26, 153, 226);
+}
+
+.text-harga {
+    font-size: 22px;
+    color: rgb(26, 153, 226);
+}
+
+.image-box {
+    height: 250px;
+}
+
+.image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-follow {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.content-follow a {
+    color: #fff;
+}
+
+.banner-produk {
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("https://blog.jejualan.com/wp-content/uploads/2020/04/2-11.jpg");
+    background-position: 50% 50%;
+}
+
+body {
+    background-color: #f4f5f7;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    background: transparent;
+}
+
+.navbar {
+    background-color: #212529;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #117a8b;
+    border-color: #117a8b;
+}
