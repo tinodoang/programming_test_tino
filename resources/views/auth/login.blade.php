@@ -124,7 +124,7 @@
                     @error('password')
                         <div class="text-danger mt-1">{{ $message }}</div>
                     @enderror
-                </div
+                </div>
 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-login">Masuk</button>
