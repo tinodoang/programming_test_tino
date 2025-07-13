@@ -5,7 +5,7 @@
         <!-- Kolom Kiri - Daftar Produk -->
         <div class="col-8">
             <div class="card border-warning">
-                <div class="card-header bg-warning text-white">
+                <div class="card-header bg-primary text-white">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="mb-0">Daftar Produk</h4>
                         <div class="text-end">

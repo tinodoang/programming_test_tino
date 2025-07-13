@@ -115,7 +115,7 @@
         <footer class="py-6 px-6 text-center">
             <p class="mb-0 fs-3">
                 Design and Developed by
-                <a href="https://minarsih.com/" target="_blank" class="pe-1"
+                <a href="https://wa.me/6285859693426" target="_blank" class="pe-1"
                     style="color: #051df5; font-weight: bold; text-decoration: none">
                     Maretino Dikhwa
                 </a>

@@ -5,22 +5,22 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="page-title">Kategori</h3>
-                    <p>Halaman ini digunakan untuk menambah, mengedit, dan menghapus kategori</p>
+                    <h3 class="page-title">Riwayat Transaksi</h3>
+                    <p>Halaman ini digunakan untuk meihat data transaksi yang telah berhasil</p>
 
                     <!-- Tombol Cetak -->
                     <button onclick="printPenjualan()" class="btn btn-primary mb-3 no-print">
                         <i class="bi bi-printer"></i> Cetak Data Penjualan
                     </button>
 
-                    <!-- Header Cetak (Hanya tampil saat print) -->
-                    <div class="text-center mb-4 d-none d-print-block">
-                        <h4><strong>Laporan Data Penjualan</strong></h4>
-                        <p>Tanggal Cetak: {{ \Carbon\Carbon::now()->translatedFormat('d F Y H:i') }}</p>
-                    </div>
-
                     <!-- Area Cetak -->
                     <div id="cetak-area" class="table-responsive mt-4">
+                        <!-- Header Cetak (Hanya saat print) -->
+                        <div class="text-center mb-4 d-print-block" style="display: none;">
+                            <h4><strong>Laporan Data Penjualan</strong></h4>
+                            <p>Tanggal Cetak: {{ \Carbon\Carbon::now()->translatedFormat('d F Y H:i') }}</p>
+                        </div>
+
                         <table class="table table-striped" id="user-table">
                             <thead>
                                 <tr>
@@ -64,9 +64,12 @@
                                         </td>
 
                                         <td>
-                                            <strong>Total:</strong> Rp {{ number_format($item->total_harga, 0, ',', '.') }}<br>
-                                            <strong>Bayar:</strong> Rp {{ number_format($item->jumlah_bayar, 0, ',', '.') }}<br>
-                                            <strong>Kembalian:</strong> Rp {{ number_format($item->kembalian, 0, ',', '.') }}
+                                            <strong>Total:</strong> Rp
+                                            {{ number_format($item->total_harga, 0, ',', '.') }}<br>
+                                            <strong>Bayar:</strong> Rp
+                                            {{ number_format($item->jumlah_bayar, 0, ',', '.') }}<br>
+                                            <strong>Kembalian:</strong> Rp
+                                            {{ number_format($item->kembalian, 0, ',', '.') }}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -89,14 +92,15 @@
     }
 </script>
 
-<!-- Style Untuk Print -->
+<!-- Style Print -->
 <style>
     @media print {
         body * {
             visibility: hidden;
         }
 
-        #cetak-area, #cetak-area * {
+        #cetak-area,
+        #cetak-area * {
             visibility: visible;
         }
 
@@ -118,7 +122,8 @@
             font-size: 12px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #000;
             padding: 6px;
             text-align: left;
@@ -130,6 +135,10 @@
 
         ul {
             padding-left: 1rem;
+        }
+
+        .d-print-block {
+            display: block !important;
         }
     }
 </style>
